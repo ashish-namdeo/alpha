@@ -1,0 +1,19 @@
+class Creatassembiliesandparts < ActiveRecord::Migration[7.0]
+  def change
+    create_table :assembilies do |t|
+      t.string :name
+      t.timestamps
+    end
+
+
+    create_table :parts do |t|
+      t.string     :name
+      t.timestamps
+    end
+
+    create_table :Creatassembiliesandparts do |t|
+      t.belongs_to :assembly
+      t.belongs_to :part
+    end  
+  end 
+end
